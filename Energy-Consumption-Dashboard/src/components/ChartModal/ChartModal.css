@@ -1,0 +1,113 @@
+.chart-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center; /* will change on xs */
+  justify-content: center;
+  z-index: 1000;
+  padding: clamp(12px, 2vw, 24px);
+  padding-left: max(12px, env(safe-area-inset-left));
+  padding-right: max(12px, env(safe-area-inset-right));
+  padding-top: max(12px, env(safe-area-inset-top));
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+.chart-modal-content {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 1000px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 60%;
+  max-height: 70%;
+  aspect-ratio: 5 / 3; 
+}
+
+.chart-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: clamp(12px, 2vw, 20px) clamp(12px, 2vw, 20px) clamp(8px, 1.5vw, 14px);
+  border-bottom: 1px solid #e5e7eb;
+  gap: 10px;
+}
+
+.chart-modal-title {
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.chart-modal-subtitle {
+  font-size: clamp(0.8rem, 1.2vw, 0.875rem);
+  color: #6b7280;
+  margin: 4px 0 0 0;
+}
+
+.chart-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color .2s, color .2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+.chart-modal-close:hover { background-color: #f3f4f6; color: #374151; }
+
+.chart-modal-body {
+  flex: 1;
+  padding: clamp(10px, 1.8vw, 18px);
+  overflow: hidden;
+  display: grid;
+}
+
+.chart-modal-chart {
+  width: 100%;
+  height: 100%;
+}
+
+/* pointer affordance on cards */
+.card .chart { cursor: pointer; transition: opacity .2s; }
+.card:hover .chart { opacity: .92; }
+
+/* Mobile-first tweaks */
+@media (max-width: 768px) {
+  .chart-modal-overlay { align-items: stretch; }
+  .chart-modal-content {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    margin: auto;
+    max-height: 92vh;
+  }
+  .chart-modal-body { padding: 12px; }
+}
+
+/* Very small devices */
+@media (max-width: 400px) {
+  .chart-modal-title { font-size: 1rem; }
+  .chart-modal-close { width: 36px; height: 36px; }
+}
+
+/* Large desktops */
+@media (min-width: 1440px) {
+  .chart-modal-content { width: 1200px; height: 720px; }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .card .chart, .chart-modal-close { transition: none; }
+}

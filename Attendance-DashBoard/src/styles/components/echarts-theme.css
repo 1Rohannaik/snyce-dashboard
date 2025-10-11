@@ -1,0 +1,188 @@
+.echarts-tooltip {
+  background: #ffffff !important; 
+  border: 1px solid #e5e7eb !important; 
+  border-radius: 12px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  color: #374151 !important; 
+  font-size: 13px !important;
+  padding: 10px 14px !important;
+  pointer-events: none !important;
+  z-index: 9999 !important;
+}
+
+
+.echarts-axis-label {
+  color: #6b7280 !important; 
+  font-size: 12px !important;
+  font-family: inherit !important;
+  transition: color 0.3s ease;
+}
+.echarts-axis-label:hover {
+  color: #4f46e5 !important;
+}
+
+
+.echarts-axis-line,
+.echarts-axis-tick {
+  stroke: #d1d5db !important;
+  stroke-width: 1px !important;
+}
+
+/* Grid Lines */
+.echarts-grid-line {
+  stroke: #d1d5db !important; 
+  stroke-width: 0.5px !important;
+  opacity: 0.2 !important;
+}
+
+/* Legend */
+.echarts-legend {
+  color: #374151 !important;
+  font-size: 12px !important;
+  font-family: inherit !important;
+}
+.echarts-legend-item {
+  color: #374151 !important;
+  padding: 4px 8px !important;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.echarts-legend-item:hover {
+  background: #4f46e5;
+  color: #ffffff !important;
+}
+.echarts-legend-symbol {
+  border-radius: 50% !important;
+}
+
+/* Line, Bar, Pie series */
+.echarts-line-series path {
+  stroke-width: 3px !important;
+  fill: none !important;
+}
+.echarts-bar-series rect {
+  stroke: none !important;
+}
+.echarts-pie-series path {
+  stroke: #ffffff !important;
+  stroke-width: 2px !important;
+}
+
+/* Titles */
+.echarts-title {
+  color: #111827 !important; 
+  font-family: inherit !important;
+  font-weight: 600 !important;
+}
+.echarts-subtitle {
+  color: #6b7280 !important; 
+  font-family: inherit !important;
+  font-weight: 400 !important;
+}
+
+/* Loading & Empty */
+.echarts-loading,
+.echarts-empty {
+  color: #9ca3af !important;
+  background: #f9fafb !important;
+  font-family: inherit !important;
+}
+
+/* Brush & Selection */
+.echarts-brush {
+  fill: #4f46e5 !important;
+  fill-opacity: 0.15 !important;
+  stroke: #4f46e5 !important;
+  stroke-width: 1px !important;
+}
+.echarts-selection-mark {
+  stroke: #4f46e5 !important;
+  stroke-width: 2px !important;
+  fill: transparent !important;
+}
+
+/* DataZoom */
+.echarts-datazoom {
+  background: #f3f4f6 !important; 
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+}
+.echarts-datazoom-handle {
+  fill: #4f46e5 !important;
+  stroke: #d1d5db !important;
+  stroke-width: 1px !important;
+  transition: all 0.3s ease;
+}
+.echarts-datazoom-handle:hover {
+  filter: drop-shadow(0 0 6px rgba(79, 70, 229, 0.4));
+}
+.echarts-datazoom-slider {
+  fill: #ffffff !important;
+  stroke: #d1d5db !important;
+  stroke-width: 1px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .echarts-axis-label {
+    font-size: 10px !important;
+  }
+  .echarts-legend {
+    font-size: 10px !important;
+  }
+  .echarts-tooltip {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+  }
+}
+@media (max-width: 480px) {
+  .echarts-axis-label {
+    font-size: 9px !important;
+  }
+  .echarts-legend {
+    font-size: 9px !important;
+  }
+  .echarts-tooltip {
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+  }
+}
+
+/* Smooth transitions */
+.echarts-chart * {
+  transition: all 0.3s ease !important;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .echarts-chart * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Print support */
+@media print {
+  .echarts-tooltip {
+    display: none !important;
+  }
+  .echarts-legend,
+  .echarts-axis-label,
+  .echarts-title {
+    color: black !important;
+  }
+  .echarts-axis-line,
+  .echarts-axis-tick,
+  .echarts-grid-line {
+    stroke: black !important;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

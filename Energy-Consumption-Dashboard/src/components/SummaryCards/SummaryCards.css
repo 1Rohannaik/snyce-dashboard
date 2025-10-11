@@ -1,0 +1,27 @@
+/* SummaryCards */
+.value {
+  font-size: clamp(14px, 1.6vw, 18px);  /* responsive type */
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Optional: give the caption and note responsive sizes too */
+.summary .small {
+  font-size: clamp(11px, 1.2vw, 12px);
+}
+.value-with-icon-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* value left, icon right */
+  font-size: 1.5rem; /* bigger text if needed */
+}
+
+.main-icon {
+  flex-shrink: 0;
+}
+
+

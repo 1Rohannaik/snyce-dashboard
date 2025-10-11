@@ -1,0 +1,8 @@
+{
+  "series": [
+    { "name": "Grid", "value": 280 },
+    { "name": "Solar", "value": 150 },
+    { "name": "Battery", "value": 127 },
+    { "name": "Others", "value": 60 }
+  ]
+}

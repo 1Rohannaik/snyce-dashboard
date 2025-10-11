@@ -1,0 +1,54 @@
+.app {
+  /* soft gradient to highlight glass cards */
+  background: radial-gradient(1200px 600px at -10% -20%, rgba(76, 131, 255, 0.08), transparent 60%),
+              radial-gradient(1200px 600px at 110% 0%, rgba(141, 124, 243, 0.08), transparent 60%),
+              linear-gradient(180deg, #f7f9ff 0%, #f4f7ff 40%, #f7f9ff 100%);
+  min-height: 100vh;
+  padding: clamp(14px, 2vw, 20px) clamp(16px, 2.4vw, 24px) clamp(48px, 4vw, 60px);
+}
+
+/* Charts toolbar right above top grid */
+.charts-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.charts-layout-select { display: inline-flex; align-items: center; gap: 6px; }
+.charts-layout-select .label { font-size: clamp(11px, 1.1vw, 12px); color: var(--muted); }
+.charts-layout-select .select {
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.8);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: clamp(12px, 1.2vw, 14px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 2px rgba(16,24,40,0.04);
+}
+
+/* Base grid */
+.grid {
+  display: grid;
+  gap: clamp(10px, 1.6vw, 16px);
+  margin-top: clamp(10px, 1.2vw, 12px);
+}
+
+/* Utilities for common layouts */
+.grid-1 { grid-template-columns: 1fr; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* Breakpoints: collapse progressively */
+@media (max-width: 1200px) {
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* Optional: wide desktops give a little more breathing room */
+@media (min-width: 1600px) {
+  .grid { gap: clamp(16px, 1.4vw, 24px); }
+}

@@ -1,0 +1,183 @@
+/* Summary grid */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(10px, 2vw, 20px);
+  margin: clamp(12px, 2vw, 20px) 0;
+}
+
+/* Breakpoints: 5 -> 3 -> 2 -> 1 columns */
+@media (max-width: 1280px) {
+  .summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 920px) {
+  .summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+.summary .item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: clamp(10px, 1.6vw, 14px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  min-width: 0; /* prevent overflow */
+}
+
+.summary .item::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0; /* top bar */
+  height: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.summary .trend-up-card::before {
+  background: linear-gradient(90deg, var(--accent-2), rgba(34, 197, 94, 0.3));
+}
+.summary .trend-down-card::before {
+  background: linear-gradient(90deg, #fb0e0e, rgba(239, 68, 68, 0.3));
+}
+.summary .trend-trending-up-card::before {
+  background: linear-gradient(90deg, #ffcc00, rgba(250, 204, 21, 0.3));
+}
+.summary .trend-trending-down-card::before {
+  background: linear-gradient(90deg, #ff8000, rgba(249, 115, 22, 0.3));
+}
+
+.summary .item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Disable heavy hover on touch devices */
+@media (pointer: coarse) {
+  .summary .item:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.summary .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+  gap: 6px;
+}
+
+.summary .caption {
+  font-size: clamp(12px, 1.2vw, 13px);
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summary .trend-icon {
+  font-size: clamp(14px, 1.4vw, 16px);
+  font-weight: 600;
+  opacity: 0.8;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.summary .item:hover .trend-icon {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.summary .value {
+  font-weight: 700;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.2;
+  margin: 8px 0;
+  color: rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summary .note {
+  font-size: clamp(11px, 1.1vw, 12px);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+  min-width: 0;
+}
+
+.summary .trend-indicator {
+  font-size: 10px;
+  font-weight: 700;
+}
+.summary .trend-up {
+  color: var(--accent-2);
+}
+.summary .trend-down {
+  color: #ef4444;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: clamp(6px, 1.2vw, 10px);
+  margin: clamp(16px, 2.4vw, 24px) 0;
+  flex-wrap: wrap;
+}
+
+.tab {
+  border: 1px solid var(--border);
+  background: var(--accent);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: clamp(12px, 1.2vw, 13px);
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease,
+    border-color 0.2s ease, box-shadow 0.2s ease;
+  min-width: 80px;
+  text-align: center;
+}
+.tab:hover {
+  background: #e97b0f;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.tab.active {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+  font-weight: 600;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Small phones: full-width tabs if desired */
+@media (max-width: 420px) {
+  .tab {
+    flex: 1 1 auto;
+    min-width: 110px;
+  }
+}

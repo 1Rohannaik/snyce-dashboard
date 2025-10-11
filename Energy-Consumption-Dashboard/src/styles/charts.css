@@ -1,0 +1,72 @@
+/* Chart containers */
+.chart {
+  width: 100%;
+  height: clamp(200px, 28vw, 320px); /* responsive height */
+  min-height: 180px;
+}
+
+.chart--line {
+  height: clamp(160px, 24vw, 260px);
+  min-height: 150px;
+}
+
+/* Tooltip sizing */
+.echarts-tooltip {
+  font-size: clamp(11px, 1.2vw, 12px);
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: clamp(6px, 1.2vw, 10px);
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.legend .key {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: clamp(11px, 1.1vw, 12px);
+  color: var(--muted);
+}
+
+.legend .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+/* Small phones: maximize chart area and stack legends */
+@media (max-width: 480px) {
+  .chart {
+    height: clamp(180px, 45vw, 240px);
+  }
+  .chart--line {
+    height: clamp(150px, 40vw, 220px);
+  }
+}
+
+/* Large desktops: allow more vertical room */
+@media (min-width: 1440px) {
+  .chart {
+    height: clamp(240px, 22vw, 360px);
+  }
+  .chart--line {
+    height: clamp(200px, 20vw, 300px);
+  }
+}
+
+/* If a card has tight vertical space, let chart flex */
+.card > .chart,
+.card > .chart--line {
+  flex: 1 1 auto;
+}
+
+/* Accessibility: bigger interactive area for points on touch */
+@media (pointer: coarse) {
+  .echarts-tooltip {
+    font-size: 13px;
+  }
+}

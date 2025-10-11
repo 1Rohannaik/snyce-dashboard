@@ -1,0 +1,75 @@
+[
+  {
+    "name": "Block 1",
+    "donut": {
+      "series": [
+        { "name": "Grid", "value": 280 },
+        { "name": "Solar", "value": 150 },
+        { "name": "Battery", "value": 127 },
+        { "name": "Others", "value": 60 }
+      ]
+    },
+    "dist": {
+      "categories": ["Floor 1", "Floor 2", "Floor 3", "Floor 4", "Common Areas"],
+      "values": [120, 95, 110, 85, 91],
+      "total": 501
+    },
+    "lineTotal": {
+      "x": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "y": [440, 505, 414, 671, 227, 413, 201, 352, 752, 650, 710, 780]
+    },
+    "lineSolar": {
+      "x": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "y": [120, 132, 101, 178, 94, 87, 134, 102, 191, 80, 120, 160]
+    }
+  },
+  {
+    "name": "Block 2",
+    "donut": {
+      "series": [
+        { "name": "Grid", "value": 180 },
+        { "name": "Solar", "value": 210 },
+        { "name": "Battery", "value": 97 },
+        { "name": "Others", "value": 30 }
+      ]
+    },
+    "dist": {
+      "categories": ["Floor 1", "Floor 2", "Floor 3", "Floor 4", "Common Areas"],
+      "values": [100, 80, 90, 70, 77],
+      "total": 417
+    },
+    "lineTotal": {
+      "x": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "y": [320, 402, 301, 534, 190, 235, 398, 187, 514, 470, 500, 560]
+    },
+    "lineSolar": {
+      "x": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "y": [140, 132, 101, 178, 94, 87, 134, 102, 191, 70, 100, 130]
+    }
+  },
+  {
+    "name": "Block 3",
+    "donut": {
+      "series": [
+        { "name": "Grid", "value": 210 },
+        { "name": "Solar", "value": 120 },
+        { "name": "Battery", "value": 87 },
+        { "name": "Others", "value": 44 }
+      ]
+    },
+    "dist": {
+      "categories": ["Floor 1", "Floor 2", "Floor 3", "Floor 4", "Common Areas"],
+      "values": [95, 85, 75, 65, 69],
+      "total": 389
+     
+    },
+    "lineTotal": {
+      "x": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "y": [280, 314, 385, 400, 150, 214, 287, 294, 434, 380, 390, 410]
+    },
+    "lineSolar": {
+      "x": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "y": [110, 120, 90, 128, 74, 77, 104, 92, 141, 50, 80, 110]
+    }
+  }
+]

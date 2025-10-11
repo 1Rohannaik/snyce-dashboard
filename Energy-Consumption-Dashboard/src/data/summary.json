@@ -1,0 +1,32 @@
+[
+  {
+    "caption": "Total Consumption",
+    "value": "6,407 MWh",
+    "note": "+2.5%",
+    "trend": "up"
+  },
+  {
+    "caption": "Solar Generation",
+    "value": "4,349 MWh",
+    "note": "+8.2%", 
+    "trend": "up"
+  },
+  {
+    "caption": "Grid Import",
+    "value": "2,058 MWh",
+    "note": "-5.1%",
+    "trend": "down"
+  },
+  {
+    "caption": "Energy Efficiency",
+    "value": "87.3%",
+    "note": "+1.2%",
+    "trend": "trending-up"
+  },
+   {
+    "caption": "Peack Demand",
+    "value": "83.3%",
+    "note": "+1.2%",
+    "trend": "trending-down"
+  }
+]

@@ -1,0 +1,56 @@
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: clamp(12px, 2.2vw, 18px) 0 clamp(6px, 1.2vw, 10px);
+  flex-wrap: wrap;                 /* allow wrapping on small screens */
+}
+
+.section-title .left {
+  font-weight: 600;
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 1.3;
+  min-width: 0;                    /* enable truncation */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.section-title .right {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;                 /* chips wrap on narrow widths */
+  align-items: center;
+}
+
+/* Chip normalization if using .chip class from global styles */
+.section-title .right .chip {
+  font-size: clamp(11px, 1.1vw, 12px);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.section-title .right .chip.active {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+
+/* Phones: stack title above controls, left-align everything */
+@media (max-width: 640px) {
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .section-title .left {
+    width: 100%;
+    white-space: normal;           /* allow wrapping title on very small screens */
+  }
+}
+
+/* Large desktops: slightly larger title */
+@media (min-width: 1280px) {
+  .section-title .left { font-size: 17px; }
+}

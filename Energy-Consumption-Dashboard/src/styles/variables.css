@@ -1,0 +1,20 @@
+:root{
+  --bg:#fafbff;
+  --card:#ffffff; /* base fallback */
+  --muted:#8b8f9c;
+  --text:#242831;
+  --accent:#f59e0b;
+  --accent-2:#22c55e;
+  --border:#e9ecf3;
+  --chip:#f3f4f6;
+  --green:#7bbf5e;
+  --purple:#8d7cf3;
+  --blue:#4c83ff;
+  --yellow:#f2cf5b;
+
+  /* Glassmorphism tokens */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --glass-shadow: 0 10px 30px rgba(31, 38, 135, 0.1), 0 1px 2px rgba(16,24,40,0.04);
+  --glass-blur: 14px;
+}

@@ -1,0 +1,111 @@
+/* Container scales and paddings */
+.container {
+  max-width: min(1400px, 94vw);
+  margin: 0 auto;
+  padding: 0 clamp(10px, 2vw, 16px);
+}
+
+/* Flexible row that wraps on small screens */
+.row {
+  display: flex;
+  gap: clamp(10px, 2vw, 16px);
+  flex-wrap: wrap; /* allow items to wrap */
+  align-items: stretch;
+}
+
+/* Generic card with glassmorphism */
+.card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: clamp(12px, 1.8vw, 16px);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  min-width: 0; /* prevent overflow in flex */
+  flex: 1 1 300px; /* grow and shrink gracefully */
+}
+
+/* Header inside card */
+.card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap; /* wrap meta/actions on phones */
+}
+
+.card-title {
+  font-size: clamp(13px, 1.2vw, 14px);
+  font-weight: 600;
+}
+
+.card-subtitle {
+  font-size: clamp(11px, 1.1vw, 12px);
+  color: var(--muted);
+}
+
+/* Subtle separator with responsive spacing */
+.separator {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--glass-border), transparent);
+  margin: clamp(6px, 1.2vw, 10px) 0;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1.2vw, 10px);
+  flex-wrap: wrap; /* buttons and chips can wrap */
+  justify-content: flex-end;
+}
+
+/* Chips */
+.chip {
+  background: var(--chip);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: clamp(11px, 1.1vw, 12px);
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.chip:hover {
+  background: var(--card);
+  border-color: var(--blue);
+  color: var(--text);
+}
+
+/* Grid helper for 3-up -> 1-up on small screens */
+.grid {
+  display: grid;
+  gap: clamp(10px, 2vw, 16px);
+}
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1200px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small phones: stack headers, expand tap targets */
+@media (max-width: 480px) {
+  .card {
+    border-radius: 8px;
+  }
+  .toolbar {
+    justify-content: flex-start;
+  }
+}
